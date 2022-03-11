@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0 10rem;
+  background: #e5e5e5;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.container {
+  margin: 0 10rem;
+  background: white;
+  border-radius: 10px;
+}
+
+.search input {
+  width: 61rem;
+  margin-left: 10rem;
+  margin-bottom: 2rem;
+  margin-top: 0.7rem;
+  border-radius: 10px;
+  text-align: left;
+  height: 1.5rem;
+  background: hsla(0, 9%, 86%, 1);
+}
+
+.search {
+  padding: 0.5rem;
+  height: 4rem;
+}
+
+.buscas {
+  width: 10rem;
+  background: white;
+  height: 100vh;
+}
+
+.buscas h2 {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  font: 600 2rem 'Poppins', sans-serif;
+}
+
+.buscas .mods h2 {
+  margin-bottom: 0;
+}
+
+.buscas label {
+  font-size: 1rem;
+  font: 400 0.75rem 'Poppins', sans-serif;
+}
+
+.results {
+  display: flex;
+}
