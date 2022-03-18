@@ -49,8 +49,8 @@ export default {
   .image-div img {
     align-self: flex-start;
     height: 4.5vh;
-    max-width: 25vw;
-    object-fit: contain;
+    max-width: 15vw;
+    object-fit: cover;
   }
 
   .item-info {
