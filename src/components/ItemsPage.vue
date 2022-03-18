@@ -43,9 +43,9 @@ export default {
     FilteredItems(){
       if (this.name) {
         let exp = new RegExp(this.name.trim(), 'i');
-        return this.items.filter(item => exp.test(item.name));
+        return this.items.filter(item => exp.test(item.name)).slice(0,200);
       } else{
-        return this.items;
+        return this.items.slice(0,200);
       }
     }
   },
