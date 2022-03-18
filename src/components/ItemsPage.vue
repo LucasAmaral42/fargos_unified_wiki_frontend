@@ -4,7 +4,7 @@
     <section class="results-section">
       <FilterSideBar/>
       <div class="item-results">
-        <ItemLine class="item-line"/>
+        <ItemLine class="item-line" v-for="item in FilteredItems" :key="item._id" :item="item"/>
       </div>
     </section>
   </div>
@@ -14,6 +14,7 @@
 import SearchBar from './navbar/SearchBar.vue'
 import FilterSideBar from './navbar/FilterSideBar.vue'
 import ItemLine from './ItemLine.vue'
+import axios from 'axios';
 
 export default {
 
@@ -32,15 +33,14 @@ export default {
     }
   },
 
-  // created(){
-  //   this.$http.get('http://localhost:3000/')
-  //     .then(res => res.json())
-  //     .then(items => this.items = items, err => console.log(err))
-  // },
+  created(){
+    axios
+      .get('http://localhost:3000/')
+      .then(res => (this.items = res.data))
+  },
 
   computed: {
     FilteredItems(){
-      console.log(this.name)
       if (this.name) {
         let exp = new RegExp(this.name.trim(), 'i');
         return this.items.filter(item => exp.test(item.name));
@@ -65,6 +65,7 @@ export default {
   .item-results {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll
+    overflow-y: scroll;
+    height: 88vh
   }
 </style>
