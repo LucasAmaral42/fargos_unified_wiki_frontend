@@ -1,8 +1,10 @@
 <template>
   <div class="body">
     <SearchBar @name="getName"/>
+
     <section class="results-section">
-      <FilterSideBar/>
+      <FilterSideBar @types="getTypes" @mods="getMods"/>
+
       <div class="item-results">
         <ItemLine class="item-line" v-for="item in FilteredItems" :key="item._id" :item="item"/>
       </div>
@@ -24,7 +26,7 @@ export default {
     ItemLine
   },
 
-  data(){
+  data() {
     return{
       items : [],
       name : '',
@@ -33,10 +35,23 @@ export default {
     }
   },
 
-  created(){
+  created() {
     axios
-      .get("http://localhost:3000/", { params: { types: this.types, mod: this.mods } })
-      .then(res => (this.items = res.data))
+      .get("http://localhost:3000/")
+      .then(response => (this.items = response.data))
+  },
+
+  watch: {
+    'types': function (val, ) {
+      axios
+        .get("http://localhost:3000/", { params: { types: val, mod: this.mods } })
+        .then(response => (this.items = response.data))
+    },
+    'mods': function (val, ) {
+      axios
+        .get("http://localhost:3000/", { params: { types: this.types, mod: val } })
+        .then(response => (this.items = response.data))
+    }
   },
 
   computed: {
@@ -51,7 +66,9 @@ export default {
   },
 
   methods: {
-    getName(value) { this.name = value.toLowerCase(); }
+    getName(value) { this.name = value.toLowerCase(); },
+    getTypes(value) { this.types = value },
+    getMods(value) { this.mods = value }
   }
 }
 </script>
@@ -65,7 +82,9 @@ export default {
   .item-results {
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
-    height: 88vh
+    height: 87.5vh;
+    width: 84vw;
   }
 </style>

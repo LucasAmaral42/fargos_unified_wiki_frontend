@@ -33,11 +33,10 @@ export default {
     background-color: #FFFFFF;
     border-radius: 10px;
     display: flex;
-    height: 8vh;
+    height: 14vh;
     margin-top: 1vh;
-    margin: 1vh 0.3vw 0 0.3vw;
-    padding: 1vh 0;
-    width: 81vw;
+    padding: 2.5vh 0;
+    width: 75vw;
   }
 
   .image-div {
@@ -48,7 +47,7 @@ export default {
 
   .image-div img {
     align-self: flex-start;
-    height: 4.5vh;
+    height: 6vh;
     max-width: 15vw;
     object-fit: cover;
   }
@@ -84,14 +83,13 @@ export default {
 
   .item-button {
     margin-left: auto;
-    margin-right: 2vw;
+    margin-right: 1vw;
   }
 
   .item-button span {
     background-color: #DADADA;
     border-radius: 5px;
-    width: 15vw;
-    padding: 1.1rem 6rem;
+    padding: 1.4vh 3vw;
   }
 
   a, a:hover a:focus, a:active {

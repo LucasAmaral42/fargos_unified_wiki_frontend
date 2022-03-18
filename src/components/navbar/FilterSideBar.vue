@@ -24,6 +24,7 @@
 
 <script>
 import vSelect from "vue-select";
+import axios from 'axios';
 
 export default {
   components: {
@@ -32,17 +33,30 @@ export default {
 
   data(){
     return{
-      items : [],
-      name : '',
       types: [],
       mods: [
         "Calamity",
         "Dragon Ball Terraria",
-        "Shadows of Abaddon",
+        "Shadows Of Abaddon",
         "Thorium"
       ],
       selected_types: [],
       selected_mods: []
+    }
+  },
+
+  created(){
+    axios
+      .get("http://localhost:3000/types")
+      .then(response => (this.types = response.data))
+  },
+
+  watch: {
+    'selected_types': function (val, ) {
+      this.$emit('types', val)
+    },
+    'selected_mods': function (val, ) {
+      this.$emit('mods', val)
     }
   },
 }
