@@ -28,14 +28,14 @@ export default {
     return{
       items : [],
       name : '',
-      filters: [],
+      types: [],
       mods: []
     }
   },
 
   created(){
     axios
-      .get('http://localhost:3000/')
+      .get("http://localhost:3000/", { params: { types: this.types, mod: this.mods } })
       .then(res => (this.items = res.data))
   },
 

@@ -5,8 +5,8 @@
 
       <v-select
         multiple
-        v-model="filter"
-        :options="filters">
+        v-model="selected_types"
+        :options="types">
       </v-select>
     </div>
 
@@ -15,7 +15,7 @@
 
       <v-select
         multiple
-        v-model="mod"
+        v-model="selected_mods"
         :options="mods">
       </v-select>
     </div>
@@ -34,15 +34,15 @@ export default {
     return{
       items : [],
       name : '',
-      filters: [
-        "",
-      ],
+      types: [],
       mods: [
         "Calamity",
         "Dragon Ball Terraria",
         "Shadows of Abaddon",
         "Thorium"
-      ]
+      ],
+      selected_types: [],
+      selected_mods: []
     }
   },
 }
