@@ -14,7 +14,7 @@
     </div>
     <div class="item-button">
       <a class="item-url" v-bind:href="item.url">
-        <span>Go to Wiki</span>
+        Go to Wiki
       </a>
     </div>
   </div>
@@ -33,9 +33,8 @@ export default {
     background-color: #FFFFFF;
     border-radius: 10px;
     display: flex;
-    height: 14vh;
     margin-top: 1vh;
-    padding: 2.5vh 0;
+    padding: 2rem 0;
     width: 75vw;
   }
 
@@ -54,6 +53,7 @@ export default {
 
   .item-info {
     max-height: 8vh;
+    margin-top: -1rem;
   }
 
   .item-name-types {
@@ -86,10 +86,15 @@ export default {
     margin-right: 1vw;
   }
 
-  .item-button span {
+  .item-button a {
+    align-items: center;
     background-color: #DADADA;
-    border-radius: 5px;
-    padding: 1.4vh 3vw;
+    border-radius: 15px;
+    display: flex;
+    font-weight: bold;
+    height: 5vh;
+    justify-content: center;
+    width: 8vw;
   }
 
   a, a:hover a:focus, a:active {

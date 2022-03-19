@@ -17,8 +17,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font: 300 1rem 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,7 +32,7 @@ body {
 }
 
 header {
-  margin-bottom: 10px;
   text-align: center;
+  font: 700 1rem 'Lato', sans-serif;
 }
 </style>
