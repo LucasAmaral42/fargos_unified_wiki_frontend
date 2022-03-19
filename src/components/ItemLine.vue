@@ -1,7 +1,7 @@
 <template>
   <div class="item-div">
     <div class="image-div">
-      <a class="item-url" v-bind:href="item.url">
+      <a class="item-url" v-bind:href="item.url" target="blank">
         <img v-bind:src="item.image_url"/>
       </a>
     </div>
@@ -13,7 +13,7 @@
       <p class="item-description">{{ item.description }}</p>
     </div>
     <div class="item-button">
-      <a class="item-url" v-bind:href="item.url">
+      <a class="item-url" v-bind:href="item.url" target="blank">
         Go to Wiki
       </a>
     </div>
