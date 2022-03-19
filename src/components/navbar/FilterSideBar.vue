@@ -47,7 +47,7 @@ export default {
 
   created(){
     axios
-      .get("http://localhost:3000/types")
+      .get(`${process.env.VUE_APP_ROOT_API}/types`)
       .then(response => (this.types = response.data))
   },
 

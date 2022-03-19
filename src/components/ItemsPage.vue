@@ -37,19 +37,19 @@ export default {
 
   created() {
     axios
-      .get("http://localhost:3000/")
+      .get(process.env.VUE_APP_ROOT_API)
       .then(response => (this.items = response.data))
   },
 
   watch: {
     'types': function (val, ) {
       axios
-        .get("http://localhost:3000/", { params: { types: val, mod: this.mods } })
+        .get(process.env.VUE_APP_ROOT_API, { params: { types: val, mod: this.mods } })
         .then(response => (this.items = response.data))
     },
     'mods': function (val, ) {
       axios
-        .get("http://localhost:3000/", { params: { types: this.types, mod: val } })
+        .get(process.env.VUE_APP_ROOT_API, { params: { types: this.types, mod: val } })
         .then(response => (this.items = response.data))
     }
   },
@@ -84,7 +84,7 @@ export default {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    height: 87.5vh;
+    height: 88.8vh;
     width: 84vw;
   }
 </style>
