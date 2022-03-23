@@ -1,9 +1,11 @@
-# fargos_unified_wiki_frontend
+# Fargo's Unified Wiki
 
 URL to heroku: https://fargos-unified-wiki.herokuapp.com/
 
 Created for me when i'm playing Terraria in Fargo's Mod with Calamity, Shadows of Abaddon, Dragon Ball Terraria and Thorium.
 You are free to copy the project and upgrade it! Just let me know then I can use it too! ;)
+
+![Example](public/example%20of%20item%20search.png)
 
 ### Requirements
 This project consumes the [Fargo's Unified Wiki API](https://github.com/LucasAmaral42/fargos_unified_wiki_api).

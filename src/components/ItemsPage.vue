@@ -84,7 +84,7 @@ export default {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    height: 88.8vh;
+    height: calc(100vh - 139px);
     width: 84vw;
   }
 </style>
